@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+
+<script>
+ 
+	//exibe valor do IMC
+    var exibeTextos;
+    function converteDecimalPraTexto() {
+        return exibeTextos.toFixed(2).replace(".",",");
+    }
+	
+	//informar altura e peso
+	var informarPesoAltura;
+    function pegaPesoAltura(){
+    return parseFloat(prompt(informarPesoAltura).replace(",","."));
+    }
+		
+ 	document.write("<h2>Índice de massa corporal (IMC)</h2>");
+	var nome = prompt("Por favor, informe o seu nome! Para calcular o IMC: "); //informar nome
+	var idade = prompt("Por favor, informe a idade: "); //informar idade
+
+	informarPesoAltura="Informe sua Altura: "; //informar altura
+	var altura = pegaPesoAltura();
+
+	informarPesoAltura="Informe seu Peso: "; //informar peso
+	var peso = pegaPesoAltura();
+    
+	var imc = peso /(altura * altura); //calcula o IMC
+    
+	document.write("Nome: " + nome + "<br>"); //exibe o nome
+	document.write("Idade: " + idade + "<br>"); //exibe a idade
+		
+	exibeTextos=imc;
+	document.write("Seu IMC é: " + converteDecimalPraTexto()); //exibe valor do IMC
+	
+</script>
+
